@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poiret+One&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../src/index.css">
+    <title>Music page</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+    <!--ШАПКА САЙТА-->
+    <div class="head">
+        <div class="logo">
+            <p class="logo_text">MusicFM</p>
+        </div>
+    </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <!--ОБЩАЯ ИНФОРМАЦИЯ-->
+    <div class="site_body">
+        <div class="container">
+            <div class="actor_body">
+                <p class="body_text">Actors List</p>
+                <div class="search">
+                    <form>
+                        <input type="text" placeholder="Search here...">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="music_body">
+                <p class="body_text">Music List</p>
+                <div class="search">
+                    <form>
+                        <input type="text" placeholder="Search here...">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <footer class="info">
+            <p class="info_text">CBS Interactive © 2022 Last.fm Ltd. All rights reserved Terms of Use Privacy Policy Legal Policies Cookies Policy Do Not Sell My Personal Information Jobs at ViacomCBS Last.fm Music</p>
+        </div>
+    </footer>
+</body>
+
 </html>
