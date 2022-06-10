@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poiret+One&family=Russo+One&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../src/index.css">
-    <script type="text/javascript" src="../src/scripts/script_search_artist.js" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
@@ -21,6 +20,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
     <title>Music page</title>
 </head>
 
@@ -36,46 +41,26 @@
             <div class="actor_body">
                 <p class="body_text">Actors List</p>
                 <div class="search_area">
-                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-                        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-                        crossorigin="anonymous">
-                    <form action="">
-                        <input type="search">
-                        <i class="fa fa-search"></i>
+                    <form class="form" action="">
+                        <input id="actor_text" class="input" type="search">
+                        <i id="search_artist_button" class="fa fa-search"></i>
                     </form>
                 </div>
-                <div class="list_area">
-                    <ol class="rectangle">
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
+                <div id="artist_list_div" class="list_area">
+                    <ol id="artist_list" class="rectangle">  
                     </ol>
                 </div>
             </div>
             <div class="music_body">
                 <p class="body_text">Music List</p>
                 <div class="search_area">
-                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-                        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-                        crossorigin="anonymous">
-                    <form action="">
-                        <input type="search">
-                        <i class="fa fa-search"></i>
+                    <form class="form" action="">
+                        <input id="music_text" class="input" type="search">
+                        <i id="search_music_button" class="fa fa-search"></i>
                     </form>
                 </div>
-                <div class="list_area">
-                    <ol class="rectangle">
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
-                        <li><a href="#">Элемент списка</a></li>
+                <div id="music_list_div" class="list_area">
+                    <ol id="music_list" class="rectangle">
                     </ol>
                 </div>
             </div>
@@ -87,5 +72,6 @@
             Legal Policies Cookies Policy Do Not Sell My Personal Information Jobs at ViacomCBS Last.fm Music</p>
     </div>
 </body>
+<script type="module" src="scripts/search_module.js"></script>
 
 </html>
