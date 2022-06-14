@@ -95,8 +95,7 @@ body {
     margin-top: 10px;
 }
 
-.actor_body {
-    grid-area: actor_body;
+.actor_music_body {
     background-color: rgba(255, 0, 0, 0.666);
     border-radius: 30px;
     display: inline-flex;
@@ -107,61 +106,27 @@ body {
     align-items: center;
 }
 
-.music_body {
+#actor_body {
+    grid-area: actor_body;
+}
+#music_body {
     grid-area: music_body;
-    background-color: rgba(255, 0, 0, 0.666);
-    border-radius: 30px;
-    display: inline-flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 /*ШАПКА САЙТА*/
 
 .logo_text {
+    -webkit-animation: blink 12s infinite;
+    
     font-size: calc(10px + 9vh);
     line-height: calc(10px + 10vh);
-    /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
-  color: #fccaff; */
-    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
     color: #fff6a9;
     font-family: 'Pacifico',
         cursive;
 
     text-align: center;
     animation: blink 12s infinite;
-    -webkit-animation: blink 12s infinite;
     font-weight: lighter;
-}
-
-
-@-webkit-keyframes blink {
-
-    20%,
-    24%,
-    55% {
-        color: #111;
-        text-shadow: none;
-    }
-
-    0%,
-    19%,
-    21%,
-    23%,
-    25%,
-    54%,
-    56%,
-    100% {
-        /*     color: #fccaff;
-    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
-        text-shadow: 0 0 5px #ffa500, 0 0 15px #e36200, 0 0 20px #ff7300, 0 0 40px #fe8a0f, 0 0 60px #9e0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
-        color: #fff6a9;
-    }
 }
 
 @keyframes blink {
@@ -227,6 +192,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     background-color: #ece1e1;
+    display: block;
 }
 
 .fa {
@@ -246,10 +212,6 @@ body {
 
 .form:hover {
     cursor: pointer;
-}
-
-.form:hover input {
-    display: block;
 }
 
 .form:hover .fa {
