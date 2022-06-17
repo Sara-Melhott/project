@@ -1,35 +1,39 @@
-import {React, useEffect} from 'react';
 import { useState } from 'react';
 import { start_search } from './scripts/search_module';
-import {validate_data } from './scripts/validator';
 import { ListTracks } from './ListTracks';
 import { ListArtists } from './ListArtists';
+import {Validator} from './Validator';
 
-export function Main(){
+function useSomeHook(api) {
+    let [data, setData] = useState([])
+    let [isLoading, setLoading] = useState([])
+    let [error, setError] = useState([])
 
-    let [listArtists, setListArtists] = useState([]);
-    let [listTracks, setListTracks] = useState([]);
-    
-    function onSearchClick(e, type){
-
-        const reqest = start_search(e, type);
-        reqest.then((data)=>{
-            try
-            {
-                if (type == 'artist_text'){
-                    setListArtists(validate_data(data.results.artistmatches, type))
-                }
-                else{
-                    setListTracks(validate_data(data.results.trackmatches, type))
-                }
-            }
-            catch(err)
-            {
-                console.log(err)
-                window.alert("No such object in Last.fm data base")
-            }
+    let callApi = function () {
+        if (isLoading != true) {
+            setLoading(true)
+            start_search(api).then((data) => {
+                console.log(data);
+                setData(data)
+                setLoading(false)
+            }).catch((error) =>{
+                setError(error)
+                setLoading(false)
             })
+        }
+        else{
+            console.log("isLoading == true");
+        }
     }
+
+    return [data, error, callApi]
+}
+
+export function App(){
+
+    let [listArtists, artistError, searchArtists] = useSomeHook('artist_text');
+    let [listTracks, tracksError, searchTracks] = useSomeHook('music_text');
+
     return(
         <div className='app'>
             <div className="flex-container-head">
@@ -44,9 +48,10 @@ export function Main(){
                     <div className="search_area">
                         <form className="form" action="">
                             <input id="artist_text" className="input" type="search"/>
-                            <i id="search_artist_button" className="fa fa-search" onClick={e => onSearchClick(e, "artist_text")}></i>
+                            <i id="search_artist_button" className="fa fa-search" onClick={e => searchArtists()}></i>
                         </form>
                     </div>
+                    <Validator valide_data={listArtists} error={artistError} api="artist_text" id="1"></Validator>
                     <ListArtists valide_data={listArtists} id="0"/>
                 </div>
                 <div id="music_body" className="actor_music_body">
@@ -54,9 +59,10 @@ export function Main(){
                     <div className="search_area">
                         <form className="form" action="">
                             <input id="music_text" className="input" type="search"/>
-                            <i id="search_music_button" className="fa fa-search" onClick={e => onSearchClick(e, "music_text")}></i>
+                            <i id="search_music_button" className="fa fa-search" onClick={e => searchTracks()}></i>
                         </form>
                     </div>
+                    <Validator valide_data={listTracks} error={tracksError} api="music_text" id="1"></Validator>
                     <ListTracks valide_data={listTracks} id="0"/>
                 </div>
             </div>
