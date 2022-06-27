@@ -22,7 +22,7 @@ const default_link = "https://www.last.fm/"
     for (let i=0; (i<7) && (i < data.artist.length); i++){
         const artist_name = () => {try{return data.artist[i].name}catch(e){return "Unknown"}};
         const artist_link = () => {try{return data.artist[i].url}catch(e){return default_link}};
-        validated_response[i] = {name: artist_name(), link: artist_link()};    
+        validated_response[i] = {id: i, name: artist_name(), link: artist_link()};    
     }
     return validated_response;
 }
@@ -38,7 +38,7 @@ const default_link = "https://www.last.fm/"
         const track_artist_name = () => {try{return data.track[i].artist}catch(e){return "Unknown"}};
         const track_name = () => {try{return data.track[i].name}catch(e){return ""}};
         const track_link = () => {try{return data.track[i].url}catch(e){ return default_link}}
-        validated_response[i]  = {artist: track_artist_name(), name: track_name(), link: track_link()};
+        validated_response[i]  = {id: i, artist: track_artist_name(), name: track_name(), link: track_link()};
     }
     return validated_response;
 }

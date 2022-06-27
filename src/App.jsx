@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { start_search } from './scripts/search_module';
-import { ListTracks } from './ListTracks';
-import { ListArtists } from './ListArtists';
 import {Validator} from './Validator';
 
-function useSomeHook(api) {
+function useSeracheInLastFM(api) {
     let [data, setData] = useState([])
     let [isLoading, setLoading] = useState([])
     let [error, setError] = useState([])
@@ -31,8 +29,8 @@ function useSomeHook(api) {
 
 export function App(){
 
-    let [listArtists, artistError, searchArtists] = useSomeHook('artist_text');
-    let [listTracks, tracksError, searchTracks] = useSomeHook('music_text');
+    let [listArtists, artistError, searchArtists] = useSeracheInLastFM('artist_text');
+    let [listTracks, tracksError, searchTracks] = useSeracheInLastFM('music_text');
 
     return(
         <div className='app'>
@@ -52,7 +50,6 @@ export function App(){
                         </form>
                     </div>
                     <Validator valide_data={listArtists} error={artistError} api="artist_text" id="1"></Validator>
-                    <ListArtists valide_data={listArtists} id="0"/>
                 </div>
                 <div id="music_body" className="actor_music_body">
                     <p className="body_text">Music List</p>
@@ -63,7 +60,6 @@ export function App(){
                         </form>
                     </div>
                     <Validator valide_data={listTracks} error={tracksError} api="music_text" id="1"></Validator>
-                    <ListTracks valide_data={listTracks} id="0"/>
                 </div>
             </div>
         </div>

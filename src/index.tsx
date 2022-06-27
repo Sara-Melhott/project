@@ -5,9 +5,7 @@ import { App } from './App';
 
  ReactDOM.render(
    <React.StrictMode>
-      <React.Fragment>
         <App></App>
-      </React.Fragment>
    </React.StrictMode>,
    document.getElementById('root')
  );
