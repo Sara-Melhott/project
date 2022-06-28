@@ -2,18 +2,23 @@ import {validate_data } from './scripts/validator';
 
 export function Validator(props){
     let errorMessage = "";
-    if (props.valide_data.length == 0){
-        errorMessage = "The search field is empty. Search is not possible.";
-    }
+    if (props.error.length != 0){
+        errorMessage = props.error.message;
+    }    
     else{
-        if (props.api == "artist_text"){
-            if (props.valide_data.results.artistmatches.artist.length == 0){
-                errorMessage = "No such object in Last.fm data base";
-            }
+        if (props.valide_data.length == 0){
+            errorMessage = "The search field is empty. Search is not possible.";
         }
         else{
-            if (props.valide_data.results.trackmatches.track.length == 0){
-                errorMessage = "No such object in Last.fm data base";
+            if (props.api == "artist_text"){
+                if (props.valide_data.results.artistmatches.artist.length == 0){
+                    errorMessage = "No such object in Last.fm data base";
+                }
+            }
+            else{
+                if (props.valide_data.results.trackmatches.track.length == 0){
+                    errorMessage = "No such object in Last.fm data base";
+                }
             }
         }
     }
