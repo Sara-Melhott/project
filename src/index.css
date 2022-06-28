@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+body {
+    margin: 0, 0, 0, 0;
+    background-image: url(res/5ea05a9bca0ed171a261f0b4.jpg);
+    display: flex;
+    flex-flow: column;
+    min-height: max-content;
+}
+
+
+.flex-container-head {
+    /*генерирует flex-контейнер уровня строки*/
+    display: inline-flex;
+    margin: 0;
+    width: 100%;
+    height: 150px;
+    position: relative;
+
+}
+
+.logo {
+    margin: 0 0 0 40%;
+    width: 0%;
+    height: 100%;
+    position: center;
+    margin: 0;
+    flex-grow: 3;
+    order: 0;
+    display: flex;
+    justify-content: center;
+    /*Центрирование по горизонтали*/
+    align-items: center;
+    /*Центрирование по вертикали */
+}
+
+.site_body {
+    margin: 0;
+    width: 100%;
+    min-height: 1500px;
+    position: relative;
+    margin: 0;
+}
+
+.footer {
+    padding: 10px;
+    margin: 0;
+    margin-top: 50px;
+    background-color: rgba(61, 47, 47, 0.82);
+    width: 100%;
+    height: 70px;
+    color: #ece1e1;
+    font-weight: 100;
+    left: 0;
+    bottom: 0;
+    z-index: -100;
+}
+
+.info_text {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: left;
+}
+
+.validaton_text {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.container {
+    display: grid;
+    grid-template-areas: "post-1 actor_body actor_body post-2"
+        "post-1 music_body music_body post-2";
+    grid-template-rows: 20%, 20%;
+    grid-template-columns: auto;
+    gap: 50px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    max-height: inherit;
+    margin: auto;
+    overflow: auto;
+    padding: 20px;
+}
+
+.body_text {
+    margin: 0;
+    font-family: 'Pacifico',
+        cursive;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.actor_music_body {
+    background-color: rgba(255, 0, 0, 0.666);
+    border-radius: 30px;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#actor_body {
+    grid-area: actor_body;
+}
+#music_body {
+    grid-area: music_body;
+}
+
+/*ШАПКА САЙТА*/
+
+.logo_text {
+    -webkit-animation: blink 12s infinite;
+    
+    font-size: calc(10px + 9vh);
+    line-height: calc(10px + 10vh);
+    color: #fff6a9;
+    font-family: 'Pacifico',
+        cursive;
+
+    text-align: center;
+    animation: blink 12s infinite;
+    font-weight: lighter;
+}
+
+@keyframes blink {
+
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        /*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+        text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        color: #fff6a9;
+    }
+}
+
+/*ПОИСК*/
+.search_area {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    align-self: center;
+}
+
+.form {
+    position: absolute;
+    transition: all 1s;
+    width: 70%;
+    height: 50px;
+    background: #ece1e1;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid #ece1e1;
+    padding: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    background-color: #ece1e1;
+    display: block;
+}
+
+.fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+.form:hover {
+    cursor: pointer;
+}
+
+.form:hover .fa {
+    background: #07051a;
+    color: #ece1e1;
+}
+
+/*СПИСОК*/
+.list_area {
+    position: relative;
+    width: 70%;
+    font-family: 'Raleway', sans-serif;
+    color: #07051a;
+    cursor: pointer;
+}
+
+
+.rectangle {
+    counter-reset: li;
+    list-style: none;
+    font-size: 16pt;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+.rectangle_a {
+    margin: 10px;
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    margin: .5em 0 .5em 2.5em;
+    background: rgba(255, 255, 255, 0.737);
+    color: rgb(33, 10, 47);
+    text-decoration: none;
+    transition: all .1s ease-out;
+    border-radius: 30px;
+}
+
+.rectangle_a:hover {
+    background: #fff6a9;
+    border: 3px solid #fff6a9;
+    font-weight: 500;
+}
+
+.rectangle_a:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: rgba(255, 255, 255, 0.737);
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 50%;
+}
+
+.rectangle_a:hover:before {
+    background-color: #fff6a9;
+}
+
+.rectangle_a:hover:after {
+    left: -.93em;
+    border-left-color: #fff6a9;
+}
